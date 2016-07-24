@@ -10,11 +10,9 @@ import org.springframework.stereotype.Component;
 public class HibernateConfigurer implements FactoryBean<SessionFactory> {
 
 	public SessionFactory getObject() {
-		Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-        SessionFactory sessionFactory = configuration.buildSessionFactory(ssrb.build());
-        return sessionFactory;
+		return new Configuration()
+				.configure() // configures settings from hibernate.cfg.xml
+				.buildSessionFactory();
 	}
 
 	@Override
@@ -26,6 +24,5 @@ public class HibernateConfigurer implements FactoryBean<SessionFactory> {
 	public boolean isSingleton() {
 		return true;
 	}
-	
-	
+
 }
