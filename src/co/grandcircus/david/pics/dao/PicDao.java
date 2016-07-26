@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import co.grandcircus.david.pics.model.Pic;
 
 @Repository
 public class PicDao {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 	
 	public List<Pic> getAllPics() {
 		List<Pic> list = new ArrayList<Pic>();
@@ -27,6 +33,12 @@ public class PicDao {
 		pic.setUserDisplay("Linus");
 		list.add(pic);
 		return list;
+	}
+	
+	public void addPic(Pic pic) {
+		try (Session session = sessionFactory.openSession()) {
+			session.save(pic);
+		}
 	}
 
 }
