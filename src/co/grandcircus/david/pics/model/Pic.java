@@ -5,10 +5,7 @@ public class Pic {
 	private Integer id;
 	private String url;
 	private String description;
-	private Integer userId;
-	private String userDisplay;
-	
-	
+	private User user;
 	
 	public Integer getId() {
 		return id;
@@ -29,18 +26,11 @@ public class Pic {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Integer getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public String getUserDisplay() {
-		return userDisplay;
-	}
-	public void setUserDisplay(String userDisplay) {
-		this.userDisplay = userDisplay;
-	}
-	
 	
 }

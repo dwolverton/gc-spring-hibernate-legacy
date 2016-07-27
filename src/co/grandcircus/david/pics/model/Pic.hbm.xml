@@ -10,6 +10,7 @@
       </id>
       <property name="url" column="url" type="string"/>
       <property name="description" column="description" type="string"/>
-      <property name="userId" column="user_id" type="int"/>
+      <many-to-one name="user" column="user_id" class="co.grandcircus.david.pics.model.User"
+                   lazy="false" />
    </class>
 </hibernate-mapping>

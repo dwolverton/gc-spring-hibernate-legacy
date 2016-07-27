@@ -32,7 +32,7 @@ public class PicController {
 		}
 		
 		// TODO add validation
-		pic.setUserId(user.getId());
+		pic.setUser(user);
 		picDao.addPic(pic);
 		
 		return "redirect:/index.html";

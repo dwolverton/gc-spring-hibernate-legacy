@@ -30,7 +30,7 @@
 						</div>
 						<div class="extra">
 							<label>By: </label> <span class="user"><c:out
-									value="${pic.userDisplay}" /></span>
+									value="${pic.user.displayName}" /></span>
 						</div>
 					</div>
 				</div>
